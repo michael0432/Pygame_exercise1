@@ -46,7 +46,9 @@ while running:
         pygame.display.flip()
 
     elif PAGE == 1:
-        if pygame.sprite.spritecollideany(player,stage1.enemy_group) and player.invincible == False:
+        hit_enemy = pygame.sprite.spritecollideany(player,stage1.enemy_group)
+        if hit_enemy and player.invincible == False:
+            hit_enemy.kill()
             player.hp.substract_hp(1)
             player.invincible = True
             start_ticks=pygame.time.get_ticks()
