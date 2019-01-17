@@ -1,5 +1,7 @@
 import pygame
 from pygame.locals import *
+
+# Menu的主要class
 class Menu(pygame.sprite.Sprite):
     def __init__(self):
         super(Menu, self).__init__()
@@ -9,7 +11,7 @@ class Menu(pygame.sprite.Sprite):
         self.start = StartGame()
         self.title = Title()
         
-
+# 開始按鈕
 class StartGame(pygame.sprite.Sprite):
     def __init__(self):
         super(StartGame, self).__init__()
@@ -18,6 +20,7 @@ class StartGame(pygame.sprite.Sprite):
         self.image.set_colorkey((255,255,255),RLEACCEL)
         self.rect = self.image.get_rect(center = (400,300))
 
+# 遊戲標題
 class Title(pygame.sprite.Sprite):
     def __init__(self):
         super(Title, self).__init__()
